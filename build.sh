@@ -5,13 +5,13 @@
 ## Copy this script inside the kernel directory
 KERNEL_DEFCONFIG=cust_defconfig
 ANYKERNEL3_DIR=$PWD/AnyKernel3/
-FINAL_KERNEL_ZIP=Etherious-miatoll-$(date '+%Y%m%d').zip
-export PATH="$HOME/proton/bin:$PATH"
+FINAL_KERNEL_ZIP=Prometheus-miatoll-$(date '+%Y%m%d').zip
+export PATH="/home/aditya/proton/bin:$PATH"
 export ARCH=arm64
 export SUBARCH=arm64
 export KBUILD_COMPILER_STRING="$($HOME/proton/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 
-if ! [ -d "$HOME/proton" ]; then
+if ! [ -d "/home/aditya/proton" ]; then
 echo "Proton clang not found! Cloning..."
 if ! git clone -q https://github.com/kdrag0n/proton-clang --depth=1 --single-branch ~/proton; then
 echo "Cloning failed! Aborting..."
